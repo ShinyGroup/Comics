@@ -19,7 +19,7 @@ const moveComic = async () => {
     let name = path.basename(pic)
     let rgs = name.match(/^(\d+)([-—－]([^.]+))?(\..+)?/)
     if (!rgs) {
-      return
+      continue
     }
     let id = parseInt(rgs[1])
     let title = rgs[3]
