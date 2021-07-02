@@ -4,3 +4,5 @@ local/
 dist/
 yarn-error.log
 npm-debug.log
+.temp
+.cache
