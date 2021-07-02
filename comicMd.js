@@ -5,14 +5,21 @@ const getHeader = (data) => {
   const key = `${data[0]}`
   const { title, name } = data[1]
   let header = ''
-  if (key.startsWith('1')) {
+  let type = ''
+  if (key.startsWith('9')) {
+    header = `第${data[0] - 90000}话 ${title}`
+    type = 'musicdawn'
+  } else if (key.startsWith('1')) {
     header = `第${data[0] - 10000}话 ${title}`
+    type = 'web'
   } else if (key.startsWith('2')) {
     header = `第${data[0] - 20000}话 ${title}`
+    type = 'special'
   } else if (key.startsWith('3')) {
     header = `第${data[0] - 30000}话 ${title}`
+    type = 'limit'
   }
-  return [header, key]
+  return [header, key, type]
 }
 
 let prev = ''
@@ -44,6 +51,9 @@ data.forEach((item, index) => {
   const content = `---
 ${prev}
 ${next}
+tags:
+  - ${key}
+  - ${title}
 ---
 <h1 style="text-align:center">${header[0]}</h1>
 

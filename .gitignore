@@ -6,3 +6,5 @@ yarn-error.log
 npm-debug.log
 .temp
 .cache
+pages/4ko/
+4ko.json

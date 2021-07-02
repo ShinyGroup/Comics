@@ -1,39 +1,43 @@
 const data = require('./public/4ko.json')
 
 const web4ko = {
-  text: 'WEB 四格漫画',
-  link: '/4ko/10000.md',
+  title: 'WEB 四格漫画',
   children: []
 }
 const special4ko = {
-  text: '特别篇 四格漫画',
-  link: '/4ko/20001.md',
+  title: '特别篇 四格漫画',
   children: []
 }
 const limit4ko = {
-  text: '限定 四格漫画',
-  link: '/4ko/30001.md',
+  title: '限定 四格漫画',
+  children: []
+}
+const musicDawn4ko = {
+  title: 'MusicDawn 四格漫画',
   children: []
 }
 data.forEach(item => {
   const key = `${item[0]}`
   const { title, name } = item[1]
-  if (key.startsWith('1')) {
+  if (key.startsWith('9')) {
+    musicDawn4ko.children.push({
+      title: `第${item[0] - 90000}话 ${title}`,
+      path: `/4ko/${key}.md`
+    })
+  } else if (key.startsWith('1')) {
     web4ko.children.push({
-      text: `第${item[0] - 10000}话 ${title}`,
-      link: `/4ko/${key}.md`
+      title: `第${item[0] - 10000}话 ${title}`,
+      path: `/4ko/${key}.md`
     })
-  }
-  if (key.startsWith('2')) {
+  } else if (key.startsWith('2')) {
     special4ko.children.push({
-      text: `第${item[0] - 20000}话 ${title}`,
-      link: `/4ko/${key}.md`
+      title: `第${item[0] - 20000}话 ${title}`,
+      path: `/4ko/${key}.md`
     })
-  }
-  if (key.startsWith('3')) {
+  } else if (key.startsWith('3')) {
     limit4ko.children.push({
-      text: `第${item[0] - 30000}话 ${title}`,
-      link: `/4ko/${key}.md`
+      title: `第${item[0] - 30000}话 ${title}`,
+      path: `/4ko/${key}.md`
     })
   }
 })
@@ -48,27 +52,34 @@ module.exports = {
     editLink: false,
     lastUpdated: false,
     contributors: false,
-    sidebar: [
+    search: false,
+    nav: [
       {
-        text: '前言',
-        link: '/README.md',
-        children: [
+        text: '汉化插件',
+        items: [
           {
-            text: '简介',
-            link: '/README.md#简介'
+            text: '使用指南',
+            link: 'https://github.com/biuuu/ShinyColors/blob/master/src/README.md'
           },
           {
-            text: '关于',
-            link: '/README.md#关于'
+            text: '提交翻译',
+            link: 'https://github.com/ShinyGroup/SCTranslationData'
           }
         ]
+      }
+    ],
+    sidebar: [
+      {
+        title: '前言',
+        path: '/',
+
       },
       web4ko,
       special4ko,
-      limit4ko
+      limit4ko,
+      musicDawn4ko
     ],
   },
   plugins: [
-
   ]
 }
