@@ -23,7 +23,10 @@ jobs:
     - name: Install dependencies
       run: yarn --frozen-lockfile
     - name: Build data
-      run: node ./index.js
+      run: |
+        yarn build
+        yarn pages:build
+        node ./copyDist.js
     - name: Deploy
       if: success()
       uses: crazy-max/ghaction-github-pages@v2

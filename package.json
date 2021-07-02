@@ -5,7 +5,8 @@
   "repository": "https://github.com/ShinyGroup/Comics.git",
   "scripts": {
     "pages:dev": "vuepress dev pages",
-    "pages:build": "vuepress build pages"
+    "pages:build": "vuepress build pages",
+    "build": "node ./index.js & node ./comicMd.js"
   },
   "dependencies": {
     "fs-extra": "^10.0.0",
