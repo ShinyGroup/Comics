@@ -45,6 +45,7 @@ data.forEach(item => {
     })
   }
 })
+
 module.exports = {
   lang: 'zh-CN',
   title: '闪耀色彩 四格漫画',
@@ -56,7 +57,8 @@ module.exports = {
     }
     .sidebar-heading.active+ul {
       display: block;
-    }`]
+    }`],
+    ['script', { src: 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "41f8947cda59499cb3e5bad5d246d75d"}', defer: true }]
   ],
   themeConfig: {
     logo: '/icon.png',
