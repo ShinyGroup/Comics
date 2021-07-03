@@ -6,7 +6,8 @@
   "scripts": {
     "pages:dev": "vuepress dev pages",
     "pages:build": "vuepress build pages",
-    "build": "node ./index.js && node ./comicMd.js"
+    "build": "node ./index.js && node ./comicMd.js",
+    "deploy": "yarn build && yarn pages:build && node ./copyDist.js"
   },
   "dependencies": {
     "fs-extra": "^10.0.0",
