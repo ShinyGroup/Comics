@@ -16,7 +16,7 @@ const limit4ko = {
   children: []
 }
 const musicDawn4ko = {
-  text: 'MusicDawn 四格漫画',
+  text: 'MUSIC DAWN 四格漫画',
   link: '/4ko/90001.md',
   children: []
 }
