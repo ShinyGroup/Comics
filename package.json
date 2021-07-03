@@ -5,7 +5,7 @@
   "repository": "https://github.com/ShinyGroup/Comics.git",
   "scripts": {
     "pages:dev": "vuepress dev pages",
-    "pages:build": "vuepress build pages",
+    "pages:build": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build pages",
     "build": "node ./index.js && node ./comicMd.js",
     "deploy": "yarn build && yarn pages:build && node ./copyDist.js"
   },
