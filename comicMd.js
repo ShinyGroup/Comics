@@ -44,8 +44,8 @@ data.forEach((item, index) => {
 
 
   const content = `---
-title: ${header[0]} - 闪耀色彩 四格漫画
-description: 闪耀色彩四格漫画 ${header[0]}
+title: ${header[0]}
+description: 偶像大师闪耀色彩的四格漫画 ${header[0]}
 ${prev}
 ${next}
 ---

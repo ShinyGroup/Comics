@@ -58,7 +58,12 @@ module.exports = {
     .sidebar-heading.active+ul {
       display: block;
     }`],
-    ['script', { src: 'https://static.cloudflareinsights.com/beacon.min.js?token=41f8947cda59499cb3e5bad5d246d75d', defer: true }]
+    ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-GD5D4E02T0' }],
+    ['script', {}, `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-GD5D4E02T0');`]
   ],
   themeConfig: {
     logo: '/icon.png',
