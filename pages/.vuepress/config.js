@@ -57,6 +57,11 @@ module.exports = {
     }
     .sidebar-heading.active+ul {
       display: block;
+    }
+    @media screen and (min-width: 720px) {
+      .theme-default-content:not(.custom) img {
+        max-width: fit-content;
+      }
     }`],
     ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-GD5D4E02T0' }],
     ['script', {}, `window.dataLayer = window.dataLayer || [];
