@@ -45,9 +45,10 @@ description: 偶像大师闪耀色彩的四格漫画 ${header[0]}
 aside: false
 ---
 <h1 style="text-align:center">${header[0]}</h1>
-
-![](/4ko/${name})`
-
+<p style="display:flex;justify-content:center;">
+  <img src="/4ko/${name}" alt="${header[0]}">
+</p>
+`
   fs.outputFileSync(`./pages/4ko/${key}.md`, content)
   fs.copySync('./dist/4ko.json', './pages/.vitepress/public/4ko.json')
 })
