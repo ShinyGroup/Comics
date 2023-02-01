@@ -26,18 +26,14 @@ data.forEach((item, index) => {
 
   if (data[index - 1]) {
     let [text, link] = getHeader(data[index - 1])
-    prev = `prev:
-  text: ${text}
-  link: /4ko/${link}.html`
+    prev = `prev: '${text}'`
   } else {
     prev = ''
   }
 
   if (data[index + 1]) {
     let [text, link] = getHeader(data[index + 1])
-    next = `next:
-  text: ${text}
-  link: /4ko/${link}.html`
+    next = `next: '${text}'`
   } else {
     next = ''
   }
@@ -46,12 +42,12 @@ data.forEach((item, index) => {
   const content = `---
 title: ${header[0]}
 description: 偶像大师闪耀色彩的四格漫画 ${header[0]}
-${prev}
-${next}
+aside: false
 ---
 <h1 style="text-align:center">${header[0]}</h1>
 
 ![](/4ko/${name})`
+
   fs.outputFileSync(`./pages/4ko/${key}.md`, content)
-  fs.copySync('./dist/4ko.json', './pages/.vuepress/public/4ko.json')
+  fs.copySync('./dist/4ko.json', './pages/.vitepress/public/4ko.json')
 })

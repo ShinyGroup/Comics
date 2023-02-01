@@ -4,9 +4,10 @@
   "main": "index.js",
   "repository": "https://github.com/ShinyGroup/Comics.git",
   "scripts": {
-    "pages:dev": "vuepress dev pages",
-    "pages:build": "node --max_old_space_size=4096 ./node_modules/vuepress/bin/vuepress.js build pages",
+    "pages:dev": "vitepress dev pages",
+    "pages:build": "vitepress build pages",
     "build": "node ./index.js && node ./comicMd.js",
+    "pages:preview": "vitepress preview pages",
     "deploy": "yarn build && yarn pages:build && node ./copyDist.js"
   },
   "dependencies": {
@@ -14,6 +15,8 @@
     "glob": "^7.1.7"
   },
   "devDependencies": {
+    "vitepress": "^1.0.0-alpha.45",
+    "vue": "^3.2.45",
     "vuepress": "^2.0.0-beta.22"
   }
 }
