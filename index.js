@@ -24,7 +24,7 @@ const moveComic = async () => {
     let id = parseInt(rgs[1])
     let title = rgs[3]
     data.set(id, { title, name: `${id}${rgs[4]}` })
-    await fs.copy(pic, `./dist/4ko/${id}${rgs[4]}`)
+    await fs.copy(pic, `./pages/4ko/${id}${rgs[4]}`)
   }
   await fs.outputJSON('./dist/4ko.json', [...data])
 }
