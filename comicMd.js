@@ -46,7 +46,7 @@ aside: false
 ---
 <h1 style="text-align:center">${header[0]}</h1>
 <p style="display:flex;justify-content:center;">
-  <img src="/4ko/${name}" alt="${header[0]}">
+  <img src="https://comic.shiny.fun/4ko/${name}" alt="${header[0]}">
 </p>
 `
   fs.outputFileSync(`./pages/4ko/${key}.md`, content)
